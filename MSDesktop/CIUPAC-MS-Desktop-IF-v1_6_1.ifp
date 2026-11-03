@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<InstallForgeProject>
+  <Metadata productVersion="1.6.1" projectFileVersion="2.0"/>
+  <ProductInformation>
+    <Name>CIUPAC-MS-Desktop</Name>
+    <Version>260217</Version>
+    <CompanyName>IADO</CompanyName>
+    <WebURI>https://ciupac.iado-conicet.gob.ar/</WebURI>
+  </ProductInformation>
+  <InstallerConfiguration>
+    <Prerequisites>
+      <OperatingSystem check="true">
+        <WindowsXP>false</WindowsXP>
+        <WindowsServer2003>false</WindowsServer2003>
+        <WindowsVista>false</WindowsVista>
+        <WindowsServer2008>false</WindowsServer2008>
+        <Windows7>true</Windows7>
+        <Windows8>false</Windows8>
+        <Windows10>true</Windows10>
+        <WindowsServer2016>false</WindowsServer2016>
+        <WindowsServer2019>false</WindowsServer2019>
+        <WindowsServer2022>false</WindowsServer2022>
+        <Windows11>true</Windows11>
+        <WindowsServer2025>false</WindowsServer2025>
+      </OperatingSystem>
+    </Prerequisites>
+    <UserInterface>
+      <WizardImage filePath="&lt;main&gt;"/>
+      <HeaderImage filePath="&lt;main&gt;"/>
+      <Label isEnabled="true"/>
+      <VisualStyle isEnabled="true"/>
+    </UserInterface>
+    <InstallationFiles defaultInstallationPath="&lt;ProgramFiles&gt;\&lt;Company&gt;\&lt;AppName&gt;\" isDefaultInstallationPathAlterable ="false">
+      <InstallationFile size="N/A" type="[Folder]">D:\mtemp\trabajo\conicet\main\MSDesktopPySide\dist\CIUPAC-MS-Desktop\_internal\</InstallationFile>
+      <InstallationFile size="1.7 MB" type="exe">D:\mtemp\trabajo\conicet\main\MSDesktopPySide\dist\CIUPAC-MS-Desktop\CIUPAC-MS-Desktop.exe</InstallationFile>
+      <InstallationFile size="340 Byte" type="cfg">D:\mtemp\trabajo\conicet\main\MSDesktopPySide\config.cfg</InstallationFile>
+    </InstallationFiles>
+    <Languages/>
+    <Variables/>
+    <Commands/>
+    <Registry/>
+    <Shortcuts defaultPath="&lt;Company&gt;\&lt;AppName&gt;\" isDefaultPathAlterable="false" isCreateStartmenuShortcutsForAllUsers="true" isCreateDesktopShortcutsForAllUsers="true">
+      <Shortcut destination="Desktop" name="CIUPAC-MS-Desktop" targetFile="&lt;InstallPath&gt;\CIUPAC-MS-Desktop.exe" commandLineArguments="" iconFilePath="" iconIndex="0"/>
+      <Shortcut destination="Startmenu" name="CIUPAC-MS-Desktop" targetFile="&lt;InstallPath&gt;\CIUPAC-MS-Desktop.exe" commandLineArguments="" iconFilePath="" iconIndex="0"/>
+    </Shortcuts>
+    <Serials isDialogEnabled="false" count="1000" mask ="#####-#####-#####-#####"/>
+    <SplashScreen isDialogEnabled="false" delayTime="2">
+      <Image filePath=""/>
+      <Sound isEnabled="false" filePath=""/>
+    </SplashScreen>
+    <License isDialogEnabled="false">
+      <Data>e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcZGVmZjBcbm91aWNvbXBhdFxkZWZsYW5nMTAzM3tcZm9udHRibHtcZjBcZm5pbCBBcmlhbDt9fQ0Ke1wqXGdlbmVyYXRvciBSaWNoZWQyMCAxMC4wLjE5MDQxfVx2aWV3a2luZDRcdWMxIA0KXHBhcmRcZjBcZnMyMFxwYXINCn0NCgA=</Data>
+    </License>
+    <Finish isRebootMachineEnabled="false">
+      <Program executableFilePath="&lt;InstallPath&gt;\" isLaunchEnabled="false" arguments=""/>
+    </Finish>
+  </InstallerConfiguration>
+  <UninstallerConfiguration isPackaged="true">
+    <UninstallerExecutableFileName>Uninstall</UninstallerExecutableFileName>
+    <OpenWebURIAfterUninstallation isEnabled="false">https://</OpenWebURIAfterUninstallation>
+    <CustomDisplayIcon isEnabled="false" iconFilePath="&lt;InstallPath&gt;\"/>
+  </UninstallerConfiguration>
+  <VisualUpdateConfiguration isPackaged="false">
+    <ProductName>&lt;AppName&gt;</ProductName>
+    <ProductVersion>&lt;AppVersion&gt;</ProductVersion>
+    <Language>0</Language>
+    <UpdateScriptURIs>
+      <MainURI>http://</MainURI>
+      <FirstMirrorURI>http://</FirstMirrorURI>
+      <SecondMirrorURI>http://</SecondMirrorURI>
+    </UpdateScriptURIs>
+    <updateExecutableFileName>Update</updateExecutableFileName>
+    <proEditionLicenseKey/>
+    <Program executableFilePath="" isLaunchEnabled="false" isTerminationEnabled="false"/>
+  </VisualUpdateConfiguration>
+  <BuildConfiguration>
+    <SetupFilePath>D:\mtemp\trabajo\conicet\main\CIUPAC-MS-Desktop-Installe-v260217.exe</SetupFilePath>
+    <SetupIconPath>D:\mtemp\trabajo\conicet\main\MSDesktopPySide\GUI\CIUPAC-MS-Desktop.ico</SetupIconPath>
+    <UninstallerIconPath>D:\mtemp\trabajo\conicet\main\MSDesktopPySide\GUI\CIUPAC-MS-Desktop.ico</UninstallerIconPath>
+    <Compression method="1" level="0"/>
+    <CodeSigning isEnabled="false" signToolCommandLine="/n &quot;Subject&quot; /tr http://timestamp.digicert.com /td sha256 /fd sha256 &quot;&lt;ExecutableFilePath&gt;&quot;"/>
+  </BuildConfiguration>
+</InstallForgeProject>
