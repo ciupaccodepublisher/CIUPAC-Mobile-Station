@@ -1,3 +1,21 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Copyright (C) 2026 Emiliano Farías <efarias@iado-conicet.gob.ar>
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program. If not, see <https://www.gnu.org/licenses/>.
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // DAD
 // Serial.print(F(""));
 // Arduino section
@@ -6,6 +24,7 @@
 // INFO: With SafeStrings (c++ strings), doing str0= str1 will copy the content of str1 on str0
 //       That means that is not a pointer copy, modifying str1 content after assignment will not change
 //       str0 content.
+
 // #define DHT_TEST
 
 #define NAME "CIUPAC-MS-00"
@@ -108,8 +127,6 @@ bool dhtMeasure(){
     // Serial.println(F("Failed to read from DHT sensor!"));
     return false;
   } else {return true;};
-  // MAD
-//   Serial.print(F("Humidity: "));
 }
 //------------------------------------------------------------------------------------------------
 // DAD
@@ -138,19 +155,24 @@ void loop() {
         if (weGotAtLeastOneGGAMsg){
           // DAD
           Serial.println("----------------------------------------------");
+          // INFO: Original string example:
           // -24-47-50-47-47-41-2C-2C-2C-2C-2C-2C-30-2C-30-30-2C-39-39-2E-39-39-2C-2C-2C-2C-2C-2C-2A-34-38-D-0
+
           // Original string send by GPS ends with \r\n. This removes the "\r".
           gpsData.remove(gpsData.length()-1);
-          // -24-47-50-47-47-41-2C-2C-2C-2C-2C-2C-30-2C-30-30-2C-39-39-2E-39-39-2C-2C-2C-2C-2C-2C-2A-34-38-0
+          // Returns: -24-47-50-47-47-41-2C-2C-2C-2C-2C-2C-30-2C-30-30-2C-39-39-2E-39-39-2C-2C-2C-2C-2C-2C-2A-34-38-0
+
           strcpy(aCString,gpsData.c_str());
           assembleDataCStr(aCString,temperature,humidity);
           #ifdef BT_PRESENT
             serialBT.print(aCString);
           #endif
           // DAD
+
           // Serial.print(F("->: "));
           // Serial.printf("-> (%d): ", counter); counter++;
           // Serial.println(aCString);
+
           // Clearing GPS input buffer. This means we want just one GPGGA packet each time we check.
           // WARNING: flush() does NOT clear an input buffer.
           // gpsSerial.flush();
@@ -162,10 +184,6 @@ void loop() {
       checkNewPacket= isItTimeNow();
       if (checkNewPacket){
           gpsSerial.flush();
-          // DAD
-          #ifdef ON_LED
-            // digitalWrite(LEDPIN,!digitalRead(LEDPIN));
-          #endif
       }
     }
   #endif

@@ -1,18 +1,29 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Copyright (C) 2026 Emiliano Farías <efarias@iado-conicet.gob.ar>
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program. If not, see <https://www.gnu.org/licenses/>.
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "Utils.hpp"
 
 BluetoothSerial serialBT;
 TimeSettingStatus timeSStatus;
 timeval aTimePckt;
 time_t previousTimestamp=0;
+
 //------------------------------------------------------------------------------------------------
-/*
-BTWrapper::BTWrapper(BluetoothSerial * serialBTPM)
-{
-  serialBTP= serialBTPM;
-}
-*/
-//------------------------------------------------------------------------------------------------
-// void BTWrapper::processReceivedStr(String& recvdStr){
 void processReceivedStr(String& recvdStr){
   // DAD
   Serial.print(F("<-: "));
@@ -100,22 +111,6 @@ void printSpecialCString(char* aStringM, bool hexM, bool oneMoreM){
     }
   }
 }
-//------------------------------------------------------------------------------------------------
-  /*
-void printSpecialString(String& aStringM){
-  uint8_t strLength= aStringM.length();
-  char aChar;
-  for (uint8_t k=0;k<strLength;k++){
-    aChar= aStringM.charAt(k);
-    // Serial.print(aChar,HEX);
-    if (aChar > 31){
-      Serial.print(" "); Serial.print(aChar);
-    } else{
-      Serial.print(atoi(&aChar));
-    }
-  }
-}
-*/
 //------------------------------------------------------------------------------------------------
 void assembleDataCStr(char* aCStringM,float temperatureM,float humidityM){
   char temperatureCStr[8]; char humidityCStr[8];
